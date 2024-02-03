@@ -1,7 +1,29 @@
 body {
+
     margin: 0;
     padding: 0;
     color: #ccc;
+}
+
+.h1-text{
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.h3-text{
+    text-align: left;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.h3-texts{
+    text-align: center;
+}
+
+.ul-text{
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 nav.main-navigation {
@@ -125,63 +147,98 @@ a.nav-link {
 
 /* Makes images fully responsive */
 
-.img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    display: block;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #100721;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+} */
+
+.container-carousel{
+    margin-top: 20px;
     width: 100%;
-    height: auto;
-}
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 10px;
 
-/* ------------------- Carousel Styling ------------------- */
+  > div {
+    flex: 0 0 200px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
 
-.carousel-inner {
-    border-radius: 15px;
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    z-index: 15;
-    margin: 0;
-    padding: 0 25px 25px 0;
-    text-align: right;
-}
-
-.carousel-control.left,
-.carousel-control.right {
-    background-image: none;
-}
-
-
-/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
-
-.section-white {
-    padding: 15px 0;
-}
-
-.section-white {
-    background-color: #fff;
-    color: #555;
-}
-
-@media screen and (min-width: 768px) {
-    .section-white {
-        padding: 1.5em 0;
+    &:nth-of-type(1) {
+      background: url("res/jabee-1.png")
+        no-repeat 50% / cover;
     }
-}
+    &:nth-of-type(2) {
+      background: url("res/jabee-2.png")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("res/jabee-3.png")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("res/jabee-4.png")
+        no-repeat 50% / cover;
+    }
 
-@media screen and (min-width: 992px) {
-    .container {
-        max-width: 930px;
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
         margin-top: 100px;
+        flex: 0 0 850px;
+        box-shadow: 1px 3px 15px #7645d8;
+        transform: translatey(-30px);
     }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
 }
+
 
 /*Footer*/
 .footer-widget p {
@@ -197,7 +254,7 @@ p {
 .animate-border {
     position: relative;
     display: block;
-    width: 115px;
+    width: 148px;
     height: 3px;
     background: #007bff;
 }
@@ -512,6 +569,9 @@ p {
 
 .contact-icon {
     position: absolute;
+    size: 20%;
+    width: 60px;
+    height: 60px;
 }
 
 .contact-icon i {
